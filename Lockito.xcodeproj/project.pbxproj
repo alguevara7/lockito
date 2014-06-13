@@ -12,6 +12,8 @@
 		1B63F4B4194A994200F7F0B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B63F4B3194A994200F7F0B5 /* Images.xcassets */; };
 		1B63F4B7194A994200F7F0B5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B63F4B5194A994200F7F0B5 /* MainMenu.xib */; };
 		1B63F4C3194A994200F7F0B5 /* LockitoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B63F4C2194A994200F7F0B5 /* LockitoTests.swift */; };
+		1B63F4CF194A996A00F7F0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B63F4CE194A996A00F7F0B5 /* Foundation.framework */; };
+		1B63F4D5194A9E5B00F7F0B5 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B63F4D4194A9E5B00F7F0B5 /* IOBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		1B63F4BC194A994200F7F0B5 /* LockitoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockitoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B63F4C1194A994200F7F0B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B63F4C2194A994200F7F0B5 /* LockitoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockitoTests.swift; sourceTree = "<group>"; };
+		1B63F4CE194A996A00F7F0B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B63F4D4194A9E5B00F7F0B5 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B63F4D5194A9E5B00F7F0B5 /* IOBluetooth.framework in Frameworks */,
+				1B63F4CF194A996A00F7F0B5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,8 @@
 		1B63F4A1194A994100F7F0B5 = {
 			isa = PBXGroup;
 			children = (
+				1B63F4D4194A9E5B00F7F0B5 /* IOBluetooth.framework */,
+				1B63F4CE194A996A00F7F0B5 /* Foundation.framework */,
 				1B63F4AC194A994100F7F0B5 /* Lockito */,
 				1B63F4BF194A994200F7F0B5 /* LockitoTests */,
 				1B63F4AB194A994100F7F0B5 /* Products */,
@@ -280,7 +288,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -316,7 +324,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 			};
 			name = Release;
 		};
@@ -325,8 +333,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/Frameworks/IOBluetooth.framework/Versions/A/Frameworks",
+				);
 				INFOPLIST_FILE = Lockito/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -336,8 +349,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/Frameworks/IOBluetooth.framework/Versions/A/Frameworks",
+				);
 				INFOPLIST_FILE = Lockito/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -399,6 +417,7 @@
 				1B63F4C8194A994200F7F0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B63F4C9194A994200F7F0B5 /* Build configuration list for PBXNativeTarget "LockitoTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +426,7 @@
 				1B63F4CB194A994200F7F0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
